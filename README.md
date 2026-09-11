@@ -28,7 +28,7 @@ Everything Isabelle would want to change lives in three places:
 - `src/content/jobs/*.md` – resume entries.
 
 Artwork lives in `src/assets/work/<project>/` and is optimised at build time. Drop new images there and
-reference them from the project file. PDFs (resume + full portfolio) live in `public/`.
+reference them from the project file. PDFs (resume + full portfolio) live in `public/`. The resume is generated from `resume/resume.html` (styled) or `resume/resume-simple.html` (plain) with headless Chrome `--print-to-pdf`; copy the output over `public/Isabelle-Carrou-Resume.pdf`.
 
 The original PDFs the site was built from are kept in `source-pdfs/`.
 

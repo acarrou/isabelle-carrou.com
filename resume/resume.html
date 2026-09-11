@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Isabelle Carrou – Resume</title>
+<style>
+  @font-face { font-family: "Anton"; src: url("file:///Users/adrien/Repos/Isabelle-site/node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("file:///Users/adrien/Repos/Isabelle-site/node_modules/@fontsource/poppins/files/poppins-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 400; font-style: italic; src: url("file:///Users/adrien/Repos/Isabelle-site/node_modules/@fontsource/poppins/files/poppins-latin-400-italic.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("file:///Users/adrien/Repos/Isabelle-site/node_modules/@fontsource/poppins/files/poppins-latin-500-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("file:///Users/adrien/Repos/Isabelle-site/node_modules/@fontsource/poppins/files/poppins-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("file:///Users/adrien/Repos/Isabelle-site/node_modules/@fontsource/poppins/files/poppins-latin-700-normal.woff2") format("woff2"); }
+
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-size: 9.2pt;
+    line-height: 1.32;
+    color: #1b1b1b;
+    background: #fff;
+    width: 8.5in; min-height: 11in;
+    padding: 0.45in 0.55in 0.4in;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* Header */
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16pt; padding-bottom: 8pt; border-bottom: 2px solid #1b1b1b; }
+  .name { font-family: "Anton", "Poppins", sans-serif; font-size: 30pt; line-height: 0.95; text-transform: uppercase; letter-spacing: 0.01em; }
+  .role { margin-top: 4pt; font-size: 11pt; font-weight: 600; color: #1b1b1b; }
+  .role span { display: inline-block; background: #fbdcd1; padding: 1pt 6pt; border-radius: 3pt; }
+  .contact { text-align: right; font-size: 8.6pt; line-height: 1.55; color: #3a3a3a; }
+  .contact b { font-weight: 600; color: #1b1b1b; }
+
+  /* Sections */
+  section { margin-top: 8pt; }
+  h2 {
+    font-size: 8.2pt; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #f07f5f; margin: 0 0 4pt; padding-bottom: 2pt; border-bottom: 1px solid #e3ddd3;
+  }
+  p { margin: 0; }
+  .summary { font-size: 9.2pt; color: #2a2a2a; }
+
+  .item { margin-top: 5pt; break-inside: avoid; }
+  .item:first-of-type { margin-top: 0; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .title { font-weight: 600; font-size: 10pt; }
+  .org { color: #3a3a3a; }
+  .org::before { content: " · "; color: #b0aaa2; }
+  .date { white-space: nowrap; font-size: 8.6pt; font-weight: 500; color: #3a3a3a; }
+  ul { margin: 1.5pt 0 0; padding-left: 11pt; }
+  li { margin: 0 0 1pt; padding-left: 1pt; }
+  li::marker { color: #f07f5f; }
+
+  .edu { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .edu .meta { font-size: 8.6pt; color: #3a3a3a; white-space: nowrap; }
+
+  .skills { display: grid; grid-template-columns: 92pt 1fr; row-gap: 2pt; column-gap: 10pt; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: #2a2a2a; }
+
+  .proj .title { font-size: 9.8pt; }
+  .proj .sub { font-weight: 400; color: #3a3a3a; }
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div>
+    <div class="name">Isabelle Carrou</div>
+    <div class="role"><span>Graphic &amp; Marketing Designer</span></div>
+  </div>
+  <div class="contact">
+    Menlo Park, CA · (650) 665-3990<br>
+    <a href="mailto:isacarrou@gmail.com"><b>isacarrou@gmail.com</b></a><br>
+    <a href="https://isabelle-carrou.com"><b>isabelle-carrou.com</b></a> · <a href="https://www.linkedin.com/in/isabelle-carrou/">linkedin.com/in/isabelle-carrou</a>
+  </div>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p class="summary">
+    Graphic and marketing designer who creates social media content, campaign graphics, and short-form video that make information clear and engaging.
+    Currently producing Reels, TikToks, and Instagram graphics for Vivian Health and campaign content for UC Santa Cruz. Strong in typography, layout,
+    motion graphics, and visual storytelling; organized, deadline-reliable, and quick to learn new tools and systems.
+  </p>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="item">
+    <div class="row">
+      <div><span class="title">Communications &amp; Marketing Intern</span><span class="org">Student Affairs &amp; Success, UC Santa Cruz</span></div>
+      <div class="date">Jul 2026 – Present</div>
+    </div>
+    <ul>
+      <li>Create and edit designs and videos for social media, promotional campaigns, and instructional content</li>
+      <li>Collaborate with departments and student teams on real-world campaigns that inform and engage students</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <div><span class="title">Content Creator</span><span class="org">Vivian Health</span></div>
+      <div class="date">Aug 2025 – Present</div>
+    </div>
+    <ul>
+      <li>Design and produce Reels, TikToks, and Instagram graphics that drive brand awareness and audience growth</li>
+      <li>Deliver a monthly set of assets while keeping quality, tone, and visual identity consistent across platforms</li>
+      <li>Partner with marketing and creative leads to keep content aligned with brand strategy and messaging</li>
+      <li>Pitch creative concepts that lift engagement and support campaign goals</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <div><span class="title">Publicist</span><span class="org">Cowell College Senate, UC Santa Cruz</span></div>
+      <div class="date">Oct 2024 – Jun 2025</div>
+    </div>
+    <ul>
+      <li>Led the Senate's Instagram and TikTok presence through posts, reels, and promotional flyers</li>
+      <li>Designed event campaigns (Friendsgiving Dinner, Valentine's Bouquet Giveaway, End of Year Event) that increased student engagement and attendance</li>
+      <li>Coordinated cross-promotion with other student organizations to expand reach</li>
+      <li>Built a recognizable visual style that strengthened the organization's online presence</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <div><span class="title">Creative Design Intern</span><span class="org">Dividend Management</span></div>
+      <div class="date">Aug 2024 – Dec 2024</div>
+    </div>
+    <ul>
+      <li>Designed pitch presentations, logos, wallpapers, and tour posters for signed music artists and athletes</li>
+      <li>Created the Marisa Sardo “Mexico Tour 2024” poster, featured on Dividend's and the artist's Instagram</li>
+      <li>Translated abstract concepts into on-brand visuals with storyboards and moodboards, concept through delivery</li>
+    </ul>
+  </div>
+</section>
+
+<section class="proj">
+  <h2>Selected Projects</h2>
+  <div class="item">
+    <div class="row">
+      <div><span class="title">L'Oréal Brandstorm 2026 — “Overglow”</span> <span class="sub">Fragrance brand concept, team of three</span></div>
+      <div class="date">2026</div>
+    </div>
+    <ul>
+      <li>Designed the logo, promotional visuals, and pitch deck for a complete brand identity built in two weeks; received a certificate of recognition from L'Oréal</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row">
+      <div><span class="title">Roots of Waste</span> <span class="sub">Personal project, digital illustration + website</span></div>
+      <div class="date">2025</div>
+    </div>
+    <ul>
+      <li>Illustrated a tree, a sea lion, and a California poppy entirely from photographed trash in Photoshop to spotlight Bay Area pollution; published with research on a self-built site</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="row">
+      <div><span class="title">3D Character Design</span> <span class="sub">Blender + Substance Painter</span></div>
+      <div class="date">2025</div>
+    </div>
+    <ul>
+      <li>Modeled, UV-unwrapped, textured, and rigged an original animation-ready character across a 10-week pipeline</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="edu">
+    <div><span class="title">University of California, Santa Cruz</span><span class="org">B.A. in Art &amp; Design: Games + Playable Media</span></div>
+    <div class="meta">Class of 2027 · GPA 3.95</div>
+  </div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Design</dt><dd>Social media content, short-form video, typography &amp; layout, branding &amp; visual identity, motion graphics, storyboards &amp; moodboards, research &amp; synthesis</dd>
+    <dt>Adobe</dt><dd>Photoshop, Illustrator, InDesign, Premiere Pro, After Effects</dd>
+    <dt>Design &amp; 3D</dt><dd>Figma, Canva, Procreate, InShot, Blender, Substance Painter</dd>
+    <dt>Web &amp; interactive</dt><dd>HTML, CSS, JavaScript, Twine, Wix</dd>
+  </dl>
+</section>
+
+</body>
+</html>

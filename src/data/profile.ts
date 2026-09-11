@@ -6,7 +6,7 @@ export const profile = {
   location: 'Menlo Park, CA',
   email: 'isacarrou@gmail.com',
   linkedin: 'https://www.linkedin.com/in/isabelle-carrou/',
-  resume: '/Isabelle-Carrou-Resume-2026.pdf',
+  resume: '/Isabelle-Carrou-Resume.pdf',
   portfolioPdf: '/Isabelle-Carrou-Portfolio-2026.pdf',
   school: 'UC Santa Cruz',
   classOf: '2027',
