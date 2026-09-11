@@ -1,0 +1,64 @@
+---
+import { profile } from "../data/profile";
+const nav = [
+  { href: "#work", label: "Work" },
+  { href: "#experience", label: "Experience" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="sticky top-0 z-50 bg-paper/85 backdrop-blur-md">
+  <div class="mx-auto max-w-7xl px-5 md:px-10">
+    <div class="flex items-center justify-between gap-6 py-3.5 md:py-4">
+      <a href="#top" class="display text-xl md:text-2xl tracking-wide leading-none hover:text-moss transition-colors">
+        {profile.first}&nbsp;{profile.last}
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 label" aria-label="Primary">
+        {nav.map((n) => (
+          <a href={n.href} class="nav-link" data-nav>{n.label}</a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href={profile.resume} target="_blank" rel="noopener" class="btn-ink !py-2 !px-3.5 !text-xs">
+          Resume
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16"/></svg>
+        </a>
+        <button
+          id="menu-btn"
+          class="md:hidden inline-flex items-center justify-center w-9 h-9 border-2 border-ink"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="rule"></div>
+  </div>
+
+  <nav id="mobile-nav" class="md:hidden hidden bg-paper border-b-2 border-ink" aria-label="Mobile">
+    <div class="mx-auto max-w-7xl px-5 py-4 flex flex-col gap-4 label">
+      {nav.map((n) => (
+        <a href={n.href} class="py-1" data-mobile-link>{n.label}</a>
+      ))}
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const nav = document.getElementById("mobile-nav");
+  if (btn && nav) {
+    const toggle = (open?: boolean) => {
+      const isOpen = open ?? nav.classList.contains("hidden");
+      nav.classList.toggle("hidden", !isOpen);
+      btn.setAttribute("aria-expanded", String(isOpen));
+    };
+    btn.addEventListener("click", () => toggle());
+    nav.querySelectorAll("[data-mobile-link]").forEach((a) => a.addEventListener("click", () => toggle(false)));
+  }
+</script>

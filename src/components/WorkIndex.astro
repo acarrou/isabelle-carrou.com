@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props { projects: CollectionEntry<"projects">[] }
+const { projects } = Astro.props;
+const pad = (n: number) => String(n).padStart(2, "0");
+---
+
+<section id="work" class="mx-auto max-w-7xl px-5 md:px-10 pt-16 md:pt-24 scroll-mt-20">
+  <div class="rule"></div>
+  <div class="flex flex-wrap items-end justify-between gap-6 pt-6 md:pt-8 reveal">
+    <h2 class="display text-[clamp(3rem,9vw,7.5rem)]">Selected<br class="md:hidden" /> Work.</h2>
+    <p class="label text-ink-soft max-w-xs md:text-right">
+      {projects.length} projects · internships, campaigns, illustration, 3D, games, animation
+    </p>
+  </div>
+
+  <ol class="mt-8 md:mt-12 reveal-stagger">
+    {projects.map((p, i) => (
+      <li class="rule-thin">
+        <a
+          href={`#${p.id}`}
+          class="group grid grid-cols-[3rem_1fr_auto] md:grid-cols-[5rem_1fr_1fr_auto] items-center gap-4 py-4 md:py-5 hover:bg-white/60 -mx-3 px-3 transition-colors"
+        >
+          <span class="label text-mute group-hover:text-ink transition-colors">{pad(i + 1)}</span>
+          <span class="display text-2xl md:text-4xl group-hover:translate-x-1 transition-transform">{p.data.title}</span>
+          <span class="hidden md:block text-sm text-ink-soft">{p.data.kicker}</span>
+          <svg class="w-5 h-5 md:w-6 md:h-6 -rotate-45 group-hover:rotate-0 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg>
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>

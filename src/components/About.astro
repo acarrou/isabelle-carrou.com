@@ -1,0 +1,63 @@
+---
+import { profile } from "../data/profile";
+const { education } = profile;
+const toolGroups = [
+  { name: "Adobe", items: ["Photoshop", "Illustrator", "InDesign", "Premiere Pro", "After Effects"] },
+  { name: "Design & 3D", items: ["Figma", "Canva", "Procreate", "Blender", "Substance Painter", "InShot"] },
+  { name: "Web & interactive", items: ["HTML", "CSS", "JavaScript", "Twine", "Wix"] },
+];
+---
+
+<section id="about" class="mx-auto max-w-7xl px-5 md:px-10 pt-20 md:pt-32 scroll-mt-20">
+  <div class="rule"></div>
+  <div class="pt-6 md:pt-8 reveal">
+    <h2 class="display text-[clamp(3rem,9vw,7.5rem)]">About.</h2>
+  </div>
+
+  <div class="mt-8 md:mt-12 grid lg:grid-cols-12 gap-10 lg:gap-14">
+    <div class="lg:col-span-6 reveal">
+      <p class="text-lg md:text-xl leading-relaxed">
+        I'm a designer studying <strong class="font-semibold">Art &amp; Design: Games + Playable Media</strong> at UC Santa Cruz.
+        My work spans social media campaigns, branding, editorial layout, illustration, 3D character work, interactive games,
+        and short animation. I'm comfortable managing multiple projects, staying organized, meeting deadlines, collaborating
+        with teams, and picking up new tools and systems quickly.
+      </p>
+      <p class="mt-5 text-lg md:text-xl leading-relaxed text-ink-soft">
+        {profile.tagline}
+      </p>
+
+      <div class="mt-10">
+        <div class="label text-mute mb-3">Education</div>
+        <div class="plate p-5 md:p-6">
+          <h3 class="display text-2xl md:text-3xl">{education.school}</h3>
+          <p class="mt-1.5 font-medium">{education.degree}</p>
+          <div class="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-sm text-ink-soft">
+            <span><span class="label text-mute mr-2">GPA</span>{education.gpa}</span>
+            <span><span class="label text-mute mr-2">Graduation</span>{education.grad}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6 grid sm:grid-cols-2 gap-10">
+      <div class="reveal">
+        <div class="label text-mute mb-3">Strengths</div>
+        <ul class="prose-ic text-[0.95rem] text-ink-soft">
+          {profile.skills.map((s) => <li>{s}</li>)}
+        </ul>
+      </div>
+      <div class="reveal-stagger flex flex-col gap-6">
+        {toolGroups.map((g) => (
+          <div>
+            <div class="label text-mute mb-2.5">{g.name}</div>
+            <ul class="flex flex-wrap gap-2">
+              {g.items.map((t) => (
+                <li class="plate px-2.5 py-1 text-xs font-semibold uppercase tracking-wider">{t}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

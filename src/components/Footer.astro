@@ -1,0 +1,49 @@
+---
+import { profile } from "../data/profile";
+const year = new Date().getFullYear();
+---
+
+<footer id="contact" class="mt-20 md:mt-32 bg-ink text-paper scroll-mt-20">
+  <div class="mx-auto max-w-7xl px-5 md:px-10 py-16 md:py-24">
+    <div class="flex items-center justify-between label text-paper/60 reveal">
+      <span>Contact</span>
+      <span>{profile.location}</span>
+    </div>
+
+    <h2 class="display mt-6 md:mt-8 text-[clamp(4rem,15vw,13rem)] reveal">Thank you.</h2>
+
+    <div class="mt-6 md:mt-8 reveal">
+      <div class="plate inline-block px-5 md:px-7 py-2.5 md:py-3 text-base md:text-xl italic">
+        I appreciate your time looking over my portfolio.
+      </div>
+    </div>
+
+    <div class="mt-12 md:mt-16 grid md:grid-cols-12 gap-10 reveal">
+      <div class="md:col-span-7">
+        <div class="label text-paper/60 mb-3">Say hello</div>
+        <a
+          href={`mailto:${profile.email}`}
+          class="display text-[clamp(1.6rem,5vw,4rem)] break-all hover:text-white underline decoration-paper/30 hover:decoration-white underline-offset-8 decoration-4 transition-colors"
+          >{profile.email}</a
+        >
+      </div>
+      <div class="md:col-span-5 flex flex-col gap-3 md:items-end">
+        <a href={profile.linkedin} target="_blank" rel="noopener" class="btn-outline !border-paper !text-paper hover:!bg-paper hover:!text-ink w-fit">
+          LinkedIn
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9"/></svg>
+        </a>
+        <a href={profile.resume} target="_blank" rel="noopener" class="btn-outline !border-paper !text-paper hover:!bg-paper hover:!text-ink w-fit">
+          Resume (PDF)
+        </a>
+        <a href={profile.portfolioPdf} target="_blank" rel="noopener" class="btn-outline !border-paper !text-paper hover:!bg-paper hover:!text-ink w-fit">
+          Portfolio (PDF)
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-16 md:mt-24 pt-6 border-t border-paper/20 flex flex-wrap justify-between gap-4 text-xs text-paper/50">
+      <span>&copy; {year} {profile.name}. All rights reserved.</span>
+      <a href="#top" class="hover:text-paper transition-colors">Back to top ↑</a>
+    </div>
+  </div>
+</footer>

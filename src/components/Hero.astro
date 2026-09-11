@@ -1,0 +1,48 @@
+---
+import { profile } from "../data/profile";
+---
+
+<section id="top" class="mx-auto max-w-7xl px-5 md:px-10 pt-10 md:pt-16 pb-12 md:pb-20">
+  <div class="flex items-center justify-between label text-ink-soft rise">
+    <span>Portfolio · {profile.gradYear}</span>
+    <span class="hidden sm:inline">{profile.location}</span>
+  </div>
+
+  <h1 class="display mt-6 md:mt-8 text-[clamp(4.5rem,17vw,15.5rem)] rise rise-2">
+    <span class="block">{profile.first}</span>
+    <span class="block">{profile.last}</span>
+  </h1>
+
+  <div class="mt-5 md:mt-7 rise rise-3">
+    <div class="plate inline-block px-5 md:px-8 py-2.5 md:py-3.5 text-lg md:text-2xl font-medium uppercase tracking-[0.08em]">
+      {profile.title}
+    </div>
+  </div>
+
+  <div class="mt-10 md:mt-14 grid md:grid-cols-12 gap-8 md:gap-12 rise rise-4">
+    <p class="md:col-span-7 text-lg md:text-2xl leading-relaxed text-ink">
+      {profile.blurb}
+    </p>
+    <div class="md:col-span-5 md:pl-6 md:border-l-2 md:border-ink flex flex-col gap-5 justify-between">
+      <p class="italic text-ink-soft text-base md:text-lg leading-relaxed">“{profile.tagline}”</p>
+      <dl class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm">
+        <div>
+          <dt class="label text-mute">Studying</dt>
+          <dd class="mt-1 font-medium">{profile.school} · Class of {profile.gradYear}</dd>
+        </div>
+        <div>
+          <dt class="label text-mute">Based in</dt>
+          <dd class="mt-1 font-medium">{profile.location}</dd>
+        </div>
+        <div>
+          <dt class="label text-mute">Email</dt>
+          <dd class="mt-1"><a href={`mailto:${profile.email}`} class="link-moss">{profile.email}</a></dd>
+        </div>
+        <div>
+          <dt class="label text-mute">Elsewhere</dt>
+          <dd class="mt-1"><a href={profile.linkedin} target="_blank" rel="noopener" class="link-moss">LinkedIn</a></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>

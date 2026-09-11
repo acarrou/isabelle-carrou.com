@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from "astro:content";
+import { profile } from "../data/profile";
+
+const jobs = (await getCollection("jobs")).sort((a, b) => a.data.order - b.data.order);
+const rendered = await Promise.all(jobs.map(async (j) => ({ ...j, Content: (await render(j)).Content })));
+---
+
+<section id="experience" class="mx-auto max-w-7xl px-5 md:px-10 pt-20 md:pt-32 scroll-mt-20">
+  <div class="rule"></div>
+  <div class="flex flex-wrap items-end justify-between gap-6 pt-6 md:pt-8 reveal">
+    <h2 class="display text-[clamp(3rem,9vw,7.5rem)]">Experience.</h2>
+    <a href={profile.resume} target="_blank" rel="noopener" class="btn-outline">
+      Full resume (PDF)
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12m0 0-4-4m4 4 4-4M4 20h16"/></svg>
+    </a>
+  </div>
+
+  <ol class="mt-8 md:mt-12 reveal-stagger">
+    {rendered.map((j) => (
+      <li class="rule-thin py-7 md:py-9 grid md:grid-cols-12 gap-3 md:gap-8">
+        <div class="md:col-span-3 flex md:flex-col gap-3 md:gap-2 items-center md:items-start">
+          <span class="label text-ink-soft">{j.data.date}</span>
+          {j.data.current && (
+            <span class="inline-flex items-center gap-1.5 label !text-[0.62rem] text-moss">
+              <span class="w-1.5 h-1.5 rounded-full bg-moss animate-pulse"></span> Current
+            </span>
+          )}
+        </div>
+        <div class="md:col-span-9">
+          <h3 class="display text-2xl md:text-3xl">{j.data.title}</h3>
+          <p class="mt-1 font-medium text-ink-soft">{j.data.org}</p>
+          <div class="prose-ic mt-4 text-[0.95rem] leading-relaxed text-ink-soft max-w-3xl">
+            <j.Content />
+          </div>
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,339 @@
+@import "tailwindcss";
+
+@import "@fontsource/anton";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/400-italic.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+
+/*
+  Palette lifted from Isabelle's portfolio PDF:
+  warm paper background, near-black ink, white "label" blocks,
+  and a deep green for links.
+*/
+@theme {
+  --color-paper: #e9e8e1;
+  --color-paper-deep: #dfdfd6;
+  --color-ink: #121212;
+  --color-ink-soft: #4a4a46;
+  --color-mute: #7a7a74;
+  --color-line: #c9c9c0;
+  --color-moss: #2f5a3b;
+  --color-moss-soft: #4c7a58;
+
+  --font-display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* ---------- Editorial type ---------- */
+.display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+}
+
+.rule {
+  border-top: 2px solid var(--color-ink);
+}
+
+.rule-thin {
+  border-top: 1px solid var(--color-line);
+}
+
+.prose-ic p + p {
+  margin-top: 1rem;
+}
+.prose-ic strong {
+  font-weight: 600;
+}
+.prose-ic ul {
+  list-style: none;
+  padding: 0;
+}
+.prose-ic li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-top: 0.4rem;
+}
+.prose-ic li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 0.55rem;
+  height: 2px;
+  background: var(--color-ink);
+}
+
+/* ---------- White label block (the "PORTFOLIO" bar from the PDF) ---------- */
+.plate {
+  background: #fff;
+  color: var(--color-ink);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* ---------- Gallery tiles ---------- */
+.tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  cursor: zoom-in;
+}
+.tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* tiles in the same grid row stretch to the tallest one; the image follows */
+}
+.tile img[style*="aspect-ratio: auto"] {
+  height: auto;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.tile:hover,
+.tile:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.35);
+  border-color: var(--color-ink);
+  outline: none;
+}
+.tile:hover img {
+  transform: scale(1.03);
+}
+.tile.tile-bare {
+  background: transparent;
+  border: 0;
+  cursor: zoom-in;
+}
+.tile.tile-bare:hover {
+  box-shadow: none;
+  transform: translateY(-6px);
+}
+.tile.tile-bare img {
+  object-fit: contain;
+}
+.tile.tile-video {
+  cursor: pointer;
+}
+.tile .badge {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-ink);
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Ticker ---------- */
+.ticker {
+  --gap: 3rem;
+  display: flex;
+  overflow: hidden;
+  gap: var(--gap);
+  user-select: none;
+}
+.ticker-track {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap);
+  min-width: 100%;
+  justify-content: space-around;
+  animation: ticker 40s linear infinite;
+}
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.12s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.19s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.26s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.33s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.40s; }
+
+/* Hero name slides up on load */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.rise-2 { animation-delay: 0.15s; }
+.rise-3 { animation-delay: 0.3s; }
+.rise-4 { animation-delay: 0.45s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker-track { animation: none; }
+  .reveal, .reveal-stagger > * { opacity: 1; transform: none; transition: none; }
+  .rise { animation: none; }
+  .tile, .tile img { transition: none; }
+}
+
+/* ---------- Links ---------- */
+.link-moss {
+  color: var(--color-moss);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.2s ease;
+}
+.link-moss:hover {
+  color: var(--color-ink);
+}
+
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.btn-ink:hover {
+  background: var(--color-moss);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--color-ink);
+  color: var(--color-ink);
+  padding: 0.65rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.btn-outline:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transform: translateY(-1px);
+}
+
+/* ---------- Lightbox ---------- */
+dialog.lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+dialog.lightbox::backdrop {
+  background: rgba(18, 18, 18, 0.92);
+  backdrop-filter: blur(6px);
+}
+dialog.lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+dialog.lightbox img {
+  max-width: min(92vw, 1400px);
+  max-height: 82vh;
+  object-fit: contain;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8);
+  animation: rise 0.35s ease both;
+}
+
+/* ---------- Nav underline ---------- */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-ink);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.nav-link:hover::after,
+.nav-link[aria-current="true"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

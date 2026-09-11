@@ -1,0 +1,37 @@
+export const profile = {
+  name: 'Isabelle Carrou',
+  first: 'Isabelle',
+  last: 'Carrou',
+  title: 'Graphic & Marketing Designer',
+  location: 'Menlo Park, CA',
+  email: 'isacarrou@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/isabelle-carrou/',
+  resume: '/Isabelle-Carrou-Resume-2026.pdf',
+  portfolioPdf: '/Isabelle-Carrou-Portfolio-2026.pdf',
+  school: 'UC Santa Cruz',
+  gradYear: '2026',
+  blurb:
+    'A detail-oriented designer creating thoughtful, visually engaging content across digital, marketing, and social media platforms. I care about typography, layout, motion, and visual storytelling, with a focus on making information clear and approachable.',
+  tagline: 'I enjoy finding effective ways to turn ideas into visuals that connect with an audience.',
+  tools: [
+    'Photoshop', 'Illustrator', 'InDesign', 'Premiere Pro', 'After Effects',
+    'Figma', 'Canva', 'Procreate', 'Blender', 'Substance Painter', 'InShot',
+    'HTML', 'CSS', 'JavaScript', 'Twine', 'Wix',
+  ],
+  skills: [
+    'Typography & layout',
+    'Motion graphics & video editing',
+    'Social media content & campaigns',
+    'Branding & visual identity',
+    'Moodboards & storyboards',
+    'Research, synthesis & summarization',
+    'Cross-functional collaboration',
+    'Organization & deadline reliability',
+  ],
+  education: {
+    school: 'University of California, Santa Cruz',
+    degree: 'B.A. in Art & Design: Games + Playable Media',
+    gpa: '3.95',
+    grad: 'Expected December 2026',
+  },
+};
