@@ -1,8 +1,14 @@
 ---
-title: "Senate Publicist."
-kicker: "Cowell College Senate · Oct 2024 – Jun 2025"
-order: 2
+title: "Cowell College Senate."
+kicker: "Publicist · Oct 2024 – Jun 2025"
+order: 3
 lead: "As Publicist for UCSC's Cowell College Senate, I ran the Senate's social media and designed everything that went out on it."
+accent: blush
+featured: true
+highlights:
+  - "Ran Cowell College Senate's Instagram and TikTok for a full academic year"
+  - "Grew event attendance through consistent, on-theme content planning"
+  - "Built a recognizable visual style for the organization"
 tools: ["Canva", "Instagram", "TikTok"]
 columns: 3
 align: right

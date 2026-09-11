@@ -3,6 +3,11 @@ title: "L'Oréal Brandstorm: Overglow."
 kicker: "Competition · L'Oréal Brandstorm 2026"
 order: 5
 lead: "As part of the L'Oréal Brandstorm 2026 competition, I worked with a small team to develop Overglow, an original fragrance concept designed to inspire personal empowerment and environmental restoration."
+accent: lilac
+featured: true
+highlights:
+  - "Complete brand identity in two weeks: logo, visuals, pitch deck and promo video"
+  - "Certificate of recognition from L'Oréal Brandstorm 2026"
 tools: ["Illustrator", "Photoshop", "Procreate", "Video editing"]
 columns: 3
 align: right

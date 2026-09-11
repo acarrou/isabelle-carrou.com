@@ -14,7 +14,7 @@ interface Props {
 const title = Astro.props.title ?? `${profile.name} | ${profile.title}`;
 const description =
   Astro.props.description ??
-  `Portfolio of ${profile.name}, a graphic and marketing designer studying Art & Design: Games + Playable Media at UC Santa Cruz. Social media content, branding, illustration, 3D, and animation.`;
+  `Portfolio of ${profile.name}, a graphic and marketing designer (UC Santa Cruz, class of 2027). Social media content, branding, illustration, 3D, and animation.`;
 
 const siteUrl = Astro.site?.toString() ?? "/";
 const url = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : siteUrl;

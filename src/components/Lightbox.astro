@@ -1,24 +1,20 @@
-<dialog class="lightbox" id="lightbox" aria-label="Image viewer">
-  <button
-    type="button"
-    class="absolute top-4 right-4 md:top-6 md:right-6 text-paper/80 hover:text-white w-11 h-11 grid place-items-center border-2 border-paper/30 hover:border-paper transition-colors z-10"
-    data-close
-    aria-label="Close"
-  >
+<dialog class="lightbox" id="lightbox" aria-label="Media viewer">
+  <button type="button" class="absolute top-4 right-4 md:top-6 md:right-6 text-white/80 hover:text-white w-11 h-11 grid place-items-center rounded-full border-2 border-white/30 hover:border-white transition-colors z-10" data-close aria-label="Close">
     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
   </button>
-  <button type="button" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-paper/70 hover:text-white w-11 h-11 grid place-items-center transition-colors" data-prev aria-label="Previous image">
+  <button type="button" class="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white w-11 h-11 grid place-items-center transition-colors" data-prev aria-label="Previous">
     <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
   </button>
-  <button type="button" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-paper/70 hover:text-white w-11 h-11 grid place-items-center transition-colors" data-next aria-label="Next image">
+  <button type="button" class="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white w-11 h-11 grid place-items-center transition-colors" data-next aria-label="Next">
     <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
   </button>
 
-  <figure class="m-0 flex flex-col items-center gap-4 px-4">
-    <img id="lightbox-img" src="" alt="" />
-    <figcaption class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-paper/80 text-sm max-w-3xl text-center">
+  <figure class="m-0 flex flex-col items-center gap-4 px-4 w-full">
+    <img id="lightbox-img" src="" alt="" hidden />
+    <div id="lightbox-frame" class="frame" hidden></div>
+    <figcaption class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-white/80 text-sm max-w-3xl text-center">
       <span id="lightbox-caption"></span>
-      <a id="lightbox-link" href="#" target="_blank" rel="noopener" class="hidden underline underline-offset-4 text-paper hover:text-white whitespace-nowrap">Open original ↗</a>
+      <a id="lightbox-link" href="#" target="_blank" rel="noopener" class="hidden underline underline-offset-4 text-white hover:text-butter whitespace-nowrap">Open original ↗</a>
     </figcaption>
   </figure>
 </dialog>
@@ -26,24 +22,42 @@
 <script>
   const dlg = document.getElementById("lightbox") as HTMLDialogElement | null;
   const img = document.getElementById("lightbox-img") as HTMLImageElement | null;
+  const frame = document.getElementById("lightbox-frame");
   const cap = document.getElementById("lightbox-caption");
   const link = document.getElementById("lightbox-link") as HTMLAnchorElement | null;
 
-  if (dlg && img && cap && link) {
+  if (dlg && img && frame && cap && link) {
     let group: HTMLElement[] = [];
     let idx = 0;
+
+    const stopVideo = () => { frame.innerHTML = ""; };
 
     const show = (i: number) => {
       if (!group.length) return;
       idx = (i + group.length) % group.length;
       const el = group[idx];
-      img.src = el.dataset.lightbox || "";
-      img.alt = el.dataset.alt || "";
+      stopVideo();
+      const embed = el.dataset.embed;
+      if (embed) {
+        img.hidden = true;
+        frame.hidden = false;
+        frame.classList.toggle("portrait", el.dataset.portrait === "true");
+        const f = document.createElement("iframe");
+        f.src = embed;
+        f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        f.setAttribute("allowfullscreen", "");
+        f.title = el.dataset.alt || "Video";
+        frame.appendChild(f);
+      } else {
+        frame.hidden = true;
+        img.hidden = false;
+        img.src = el.dataset.lightbox || "";
+        img.alt = el.dataset.alt || "";
+      }
       cap.textContent = el.dataset.alt || "";
       const href = el.dataset.href || "";
       link.classList.toggle("hidden", !href);
       if (href) link.href = href;
-      // Preload neighbours
       for (const n of [idx + 1, idx - 1]) {
         const s = group[(n + group.length) % group.length]?.dataset.lightbox;
         if (s) new Image().src = s;
@@ -51,29 +65,21 @@
     };
 
     document.addEventListener("click", (e) => {
-      const t = (e.target as HTMLElement).closest<HTMLElement>("[data-lightbox]");
+      const t = (e.target as HTMLElement).closest<HTMLElement>("[data-lightbox], [data-embed]");
       if (!t) return;
       const gallery = t.closest<HTMLElement>("[data-gallery]");
-      group = gallery ? Array.from(gallery.querySelectorAll<HTMLElement>("[data-lightbox]")) : [t];
+      group = gallery ? Array.from(gallery.querySelectorAll<HTMLElement>("[data-lightbox], [data-embed]")) : [t];
       show(group.indexOf(t));
       dlg.showModal();
       document.body.style.overflow = "hidden";
     });
 
-    const close = () => {
-      dlg.close();
-    };
-    dlg.addEventListener("close", () => {
-      document.body.style.overflow = "";
-      img.src = "";
-    });
+    const close = () => dlg.close();
+    dlg.addEventListener("close", () => { document.body.style.overflow = ""; img.src = ""; stopVideo(); });
     dlg.querySelector("[data-close]")?.addEventListener("click", close);
     dlg.querySelector("[data-prev]")?.addEventListener("click", () => show(idx - 1));
     dlg.querySelector("[data-next]")?.addEventListener("click", () => show(idx + 1));
-    dlg.addEventListener("click", (e) => {
-      // click on the backdrop (outside the figure) closes
-      if (e.target === dlg) close();
-    });
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) close(); });
     dlg.addEventListener("keydown", (e) => {
       if (e.key === "ArrowRight") show(idx + 1);
       if (e.key === "ArrowLeft") show(idx - 1);

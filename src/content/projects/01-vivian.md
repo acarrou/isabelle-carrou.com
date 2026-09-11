@@ -1,8 +1,14 @@
 ---
-title: "Content Creation."
-kicker: "Vivian Health · Aug 2025 – Present"
-order: 3
+title: "Vivian Health."
+kicker: "Content creation · Aug 2025 – Present"
+order: 1
 lead: "At Vivian Health I create visual content for social media: Reels and TikToks as well as posters and graphics for Instagram."
+accent: sage
+featured: true
+highlights:
+  - "Reels, TikToks and Instagram graphics shipped every month since Aug 2025"
+  - "Content runs across Vivian Health's social platforms"
+  - "Works directly with the marketing and creative team on brand-aligned campaigns"
 tools: ["Premiere Pro", "After Effects", "Canva", "InShot", "Photoshop"]
 columns: 3
 align: left

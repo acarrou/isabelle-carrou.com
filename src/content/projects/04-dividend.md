@@ -1,8 +1,13 @@
 ---
-title: "Creative Design Intern."
-kicker: "Dividend Management · Aug – Dec 2024"
-order: 1
+title: "Dividend Management."
+kicker: "Creative Design Intern · Aug – Dec 2024"
+order: 4
 lead: "During my internship at Dividend Management, I collaborated with a creative team to design visuals for the company as well as its signed music artists and athletes."
+accent: slate
+featured: true
+highlights:
+  - "Marisa Sardo tour poster featured on Dividend's and the artist's Instagram"
+  - "Logos, wallpapers, pitch decks and posters for signed artists and athletes"
 tools: ["Photoshop", "InDesign", "Canva"]
 columns: 3
 align: left

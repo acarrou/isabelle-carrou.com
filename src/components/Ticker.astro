@@ -3,14 +3,14 @@ import { profile } from "../data/profile";
 const items = profile.tools;
 ---
 
-<div class="bg-ink text-paper py-3.5 md:py-4 overflow-hidden" aria-hidden="true">
+<div class="bg-forest text-paper py-3.5 md:py-4 overflow-hidden" aria-hidden="true">
   <div class="ticker">
     {[0, 1].map(() => (
       <div class="ticker-track">
         {items.map((t) => (
-          <span class="label !text-[0.8rem] whitespace-nowrap flex items-center gap-12">
+          <span class="label !text-[0.78rem] whitespace-nowrap flex items-center gap-10">
             {t}
-            <span class="text-paper/50">✦</span>
+            <span class="text-butter">✦</span>
           </span>
         ))}
       </div>

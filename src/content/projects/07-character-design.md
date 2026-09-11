@@ -1,8 +1,13 @@
 ---
 title: "Character Design."
 kicker: "3D modeling & animation · 10 weeks"
-order: 6
+order: 7
 lead: "Over a 10-week period I created a fully original, animation-ready 3D character from concept to animation in Blender."
+accent: sky
+featured: false
+highlights:
+  - "Concept, modeling, UV unwrapping, texturing and rigging over 10 weeks"
+  - "Animation-ready character with a full skeletal rig"
 tools: ["Blender", "Substance Painter", "Concept sketching"]
 columns: 3
 align: left

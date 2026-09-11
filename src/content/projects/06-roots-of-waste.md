@@ -1,8 +1,13 @@
 ---
 title: "Roots of Waste."
 kicker: "Personal project · Digital illustration"
-order: 4
+order: 6
 lead: "Roots of Waste combines digital illustration, research, and storytelling to spotlight local environmental issues in the Bay Area."
+accent: coral
+featured: true
+highlights:
+  - "Three illustrations built entirely from photographed pieces of trash"
+  - "Live website pairing the art with research on Bay Area waste"
 tools: ["Photoshop", "Wix", "Research"]
 columns: 3
 tone: bare

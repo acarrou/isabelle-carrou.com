@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+interface Props { projects: CollectionEntry<"projects">[] }
+const featured = Astro.props.projects.filter((p) => p.data.featured && p.data.images.length > 0).slice(0, 5);
+const all = Astro.props.projects;
+// bento layout: first tile is large
+const layout = ["md:col-span-2 md:row-span-2", "", "", "", ""];
+---
+
+<section id="work" class="mx-auto max-w-7xl px-5 md:px-10 pt-14 md:pt-20 scroll-mt-20">
+  <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+    <div>
+      <div class="label text-coral">Selected work</div>
+      <h2 class="display mt-2 text-[clamp(2.6rem,7vw,5.5rem)]">Things I've made.</h2>
+    </div>
+    <p class="text-ink-soft max-w-sm">
+      Social campaigns, brand work, illustration, 3D and animation. Tap any piece to jump to the project.
+    </p>
+  </div>
+
+  <div class="mt-8 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 md:auto-rows-[15rem] reveal-stagger">
+    {featured.map((p, n) => {
+      const img = p.data.images[0];
+      return (
+        <a href={`#${p.id}`} class:list={["feat", layout[n], n === 0 ? "col-span-2 aspect-[4/3] md:aspect-auto" : "aspect-square md:aspect-auto"]} data-accent={p.data.accent}>
+          <Image
+            src={img.src}
+            alt={img.alt}
+            widths={[420, 720, 1080]}
+            sizes={n === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
+            class:list={[p.data.tone === "bare" && "!object-contain p-6"]}
+            style="object-position: center top"
+            loading="eager"
+          />
+          <div class="cap">
+            <div class="display text-lg md:text-2xl leading-none">{p.data.title}</div>
+            <div class="text-[0.7rem] md:text-xs mt-1 opacity-85">{p.data.kicker}</div>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+
+  <ol class="mt-8 md:mt-10 flex flex-wrap gap-2 reveal" aria-label="All projects">
+    {all.map((p, i) => (
+      <li>
+        <a href={`#${p.id}`} class="chip hover:bg-ink hover:text-white hover:border-ink transition-colors" data-accent={p.data.accent}>
+          <span class="text-mute mr-2">{String(i + 1).padStart(2, "0")}</span>{p.data.title.replace(/\.$/, "")}
+          {p.data.pending && <span class="ml-2 w-1.5 h-1.5 rounded-full bg-butter"></span>}
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>

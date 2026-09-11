@@ -3,6 +3,11 @@ title: "Animation."
 kicker: "Short films · Stop motion & hand-drawn"
 order: 8
 lead: "A selection of short animations made while experimenting with different styles and storytelling approaches. Each one was a chance to play, problem solve, and learn something new."
+accent: butter
+featured: false
+highlights:
+  - "One stop-motion short and two hand-drawn frame-by-frame animations"
+  - "Edited and scored in Premiere Pro and After Effects"
 tools: ["InShot", "Premiere Pro", "After Effects", "Frame-by-frame"]
 columns: 3
 align: left

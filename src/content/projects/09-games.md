@@ -1,8 +1,13 @@
 ---
-title: "Games."
+title: "Love Island (WLW)."
 kicker: "Interactive narrative · Twine"
-order: 7
+order: 9
 lead: "For a course on Queer and Trans Art and Games, I collaborated with a partner to create an interactive, narrative-driven game in Twine: a queer spin-off of the reality TV show Love Island."
+accent: blush
+featured: false
+highlights:
+  - "Co-written branching narrative with custom visuals, music and code in Twine"
+  - "Made in a Queer and Trans Art and Games course with a partner"
 tools: ["Twine", "CSS", "JavaScript", "Writing"]
 columns: 2
 align: right
