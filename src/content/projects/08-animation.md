@@ -6,23 +6,23 @@ lead: "A selection of short animations made while experimenting with different s
 accent: butter
 featured: false
 highlights:
-  - "One stop-motion short and two hand-drawn frame-by-frame animations"
-  - "Edited and scored in Premiere Pro and After Effects"
-tools: ["InShot", "Premiere Pro", "After Effects", "Frame-by-frame"]
+  - "One stop motion short and two hand drawn frame by frame animations"
+  - "Animations edited in Premiere Pro and After Effects"
+tools: ["InShot", "Premiere Pro", "After Effects"]
 columns: 3
 align: left
 images:
-  - src: "../../assets/work/animation/tree-face.jpg"
-    alt: "Hand-drawn animation still: a tree with a sleeping face"
-    href: "https://youtu.be/WtSDwr6tCwI"
-    kind: video
-    span: 2
   - src: "../../assets/work/animation/stop-motion.jpg"
     alt: "Stop motion still: a vintage robot and a couple in front of the Eiffel Tower on an old TV"
     href: "https://drive.google.com/file/d/1c877yABw9PZ1d1zhVzmlz3hj1Db6l3GF/view?usp=sharing"
     kind: video
+  - src: "../../assets/work/animation/tree-face.jpg"
+    alt: "Hand drawn animation still: a tree with a sleeping face"
+    href: "https://youtu.be/WtSDwr6tCwI"
+    kind: video
+    span: 2
   - src: "../../assets/work/animation/girl-flames.jpg"
-    alt: "Hand-drawn animation still: a small girl beneath a plume of flame"
+    alt: "Hand drawn animation still: a small girl beneath a plume of flame"
     href: "https://youtu.be/5XgSDbqMT2s"
     kind: video
     span: 3

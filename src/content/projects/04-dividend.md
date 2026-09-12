@@ -4,6 +4,7 @@ kicker: "Creative Design Intern · Aug – Dec 2024"
 order: 4
 lead: "During my internship at Dividend Management, I collaborated with a creative team to design visuals for the company as well as its signed music artists and athletes."
 accent: slate
+group: work
 featured: true
 highlights:
   - "Marisa Sardo tour poster featured on Dividend's and the artist's Instagram"

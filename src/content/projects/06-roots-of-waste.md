@@ -2,7 +2,7 @@
 title: "Roots of Waste."
 kicker: "Personal project · Digital illustration"
 order: 6
-lead: "Roots of Waste combines digital illustration, research, and storytelling to spotlight local environmental issues in the Bay Area."
+lead: "Roots of Waste is a personal project that combines digital illustration, research, and storytelling to spotlight local environmental issues in the Bay Area."
 accent: coral
 featured: true
 highlights:

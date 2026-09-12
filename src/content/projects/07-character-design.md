@@ -2,12 +2,12 @@
 title: "Character Design."
 kicker: "3D modeling & animation · 10 weeks"
 order: 7
-lead: "Over a 10-week period I created a fully original, animation-ready 3D character from concept to animation in Blender."
+lead: "Over a 10-week period, I developed a fully original, 3D animated character in Blender, taking the project from initial concept and character design through sketching, modeling, rigging, and final animation."
 accent: sky
 featured: false
 highlights:
   - "Concept, modeling, UV unwrapping, texturing and rigging over 10 weeks"
-  - "Animation-ready character with a full skeletal rig"
+  - "3D animated character with a full skeletal rig"
 tools: ["Blender", "Substance Painter", "Concept sketching"]
 columns: 3
 align: left
@@ -31,7 +31,7 @@ images:
   - src: "../../assets/work/character/final-pose.jpg"
     alt: "Final textured character in a red jacket and denim shorts, posed"
 ---
-The goal of this project was to develop a complete, animation-ready character while refining my skills in character modeling and production workflow.
+The goal of this project was to develop a complete, animated character while refining my skills in character modeling and production workflow.
 
 I started with concept sketches before modeling the body, clothing, head, and hair. Once the base of the character was established, I UV-unwrapped and textured the model in Substance Painter, experimenting with materials and surface detail to enhance realism and style.
 

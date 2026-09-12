@@ -6,7 +6,7 @@ lead: "As part of the L'Oréal Brandstorm 2026 competition, I worked with a smal
 accent: lilac
 featured: true
 highlights:
-  - "Complete brand identity in two weeks: logo, visuals, pitch deck and promo video"
+  - "Completed brand identity in two weeks: logo, visuals, pitch deck and promo video"
   - "Certificate of recognition from L'Oréal Brandstorm 2026"
 tools: ["Illustrator", "Photoshop", "Procreate", "Video editing"]
 columns: 3

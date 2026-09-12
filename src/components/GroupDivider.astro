@@ -1,0 +1,11 @@
+---
+interface Props { label: string }
+const { label } = Astro.props;
+---
+
+<div class="mx-auto max-w-7xl px-5 md:px-10 pt-16 md:pt-24 reveal">
+  <div class="flex items-center gap-4">
+    <h2 class="display text-[clamp(1.6rem,3.5vw,2.6rem)] whitespace-nowrap">{label}</h2>
+    <div class="h-[2px] flex-1 bg-ink"></div>
+  </div>
+</div>

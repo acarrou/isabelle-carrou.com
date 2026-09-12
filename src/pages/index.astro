@@ -7,6 +7,7 @@ import Featured from "../components/Featured.astro";
 import Project from "../components/Project.astro";
 import Experience from "../components/Experience.astro";
 import About from "../components/About.astro";
+import GroupDivider from "../components/GroupDivider.astro";
 
 const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
 ---
@@ -15,7 +16,14 @@ const projects = (await getCollection("projects")).sort((a, b) => a.data.order -
   <Hero />
   <Ticker />
   <Featured projects={projects} />
-  {projects.map((p, i) => <Project project={p} index={i + 1} />)}
+  {projects.map((p, i) => (
+    <>
+      {(i === 0 || projects[i - 1].data.group !== p.data.group) && (
+        <GroupDivider label={p.data.group === "work" ? "Work Experience" : "Personal Projects"} />
+      )}
+      <Project project={p} index={i + 1} />
+    </>
+  ))}
   <Experience />
   <About />
 </BaseLayout>

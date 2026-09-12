@@ -12,6 +12,8 @@ const projects = defineCollection({
       kicker: z.string(),
       order: z.number(),
       accent: z.enum(accents).default('sage'),
+      // 'work' = job/internship, 'personal' = personal or school project. A divider is shown when the group changes.
+      group: z.enum(['work', 'personal']).default('personal'),
       lead: z.string().optional(),
       tools: z.array(z.string()).default([]),
       // Short factual bullets shown in a "Highlights" box (no numbers needed)

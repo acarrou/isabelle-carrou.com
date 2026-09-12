@@ -1,9 +1,10 @@
 ---
-title: "Cowell College Senate."
-kicker: "Publicist · Oct 2024 – Jun 2025"
+title: "Senate Publicist."
+kicker: "Cowell College Senate, UC Santa Cruz · Oct 2024 – Jun 2025"
 order: 3
-lead: "As Publicist for UCSC's Cowell College Senate, I ran the Senate's social media and designed everything that went out on it."
+lead: "As Publicist for UC Santa Cruz's Cowell College Senate, I helped shape and manage the Senate's social media presence across Instagram and TikTok. Working with a small team, I developed and designed content, managed social media publishing, and led outreach efforts to connect with other campus organizations."
 accent: blush
+group: work
 featured: true
 highlights:
   - "Ran Cowell College Senate's Instagram and TikTok for a full academic year"
@@ -23,7 +24,7 @@ images:
     alt: "End of the Year Event poster with axe throwing, inflatables and ice cream"
     href: "https://drive.google.com/file/d/1LY1pPVbtfG_1Wf0G1kIKx9mhLG2MhddA/view?usp=sharing"
 ---
-Our goal as Cowell College Senate was not only to provide funding to clubs on campus, but to increase student engagement and connect the campus community with what Cowell and UCSC have to offer.
+Our goal as Cowell College Senate was not only to provide funding to clubs on campus, but to increase student engagement and connect the campus community with what Cowell and UC Santa Cruz have to offer.
 
 I managed the Senate's Instagram and TikTok, designing and publishing graphics and posters to promote events and share resources with students. Consistent, creative content planning grew engagement and event attendance, and gave the Senate a recognizable visual style.
 
